@@ -38,31 +38,31 @@ Pastikan sudah terinstall:
 
 Cek dengan:
 ```bash```
-python --version
-ollama --version
+`python --version`
+`ollama --version`
 
 
-*Instalasi
+## Instalasi
 1. Install Ollama
 
-Unduh dari:
+```Unduh dari:```
 https://ollama.com
 
-2. Download Model LLM
-ollama run llama3
+## 2. Download Model LLM
+`ollama run llama3`
 
 
 Tunggu sampai selesai download, lalu keluar dengan Ctrl + C.
 
 Cek model tersedia:
 
-ollama list
+`ollama list`
 
-3. Install Library Python
+## 3. Install Library Python
 
 Masuk ke folder project:
 
-python -m pip install ollama
+`python -m pip install ollama`
 
 Struktur Project
 Simple-Ollama-Agent/
@@ -70,19 +70,19 @@ Simple-Ollama-Agent/
 ├── agent.py
 └── README.md
 
-Kode agent.py
-import ollama
+## Kode agent.py
+`import ollama`
 
-SYSTEM_PROMPT = """
+`SYSTEM_PROMPT = """
 You are an AI Agent.
 Think step by step before answering.
 Break down the problem, reason, then answer clearly.
-"""
+"""`
 
-messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+`messages = [{"role": "system", "content": SYSTEM_PROMPT}]`
 
-def agent(question):
-    messages.append({"role": "user", "content": question})
+`def agent(question):
+    messages.append({"role": "user", "content": question})`
 
     response = ollama.chat(
         model="llama3",
@@ -93,8 +93,8 @@ def agent(question):
     return response["message"]["content"]
 
 
-if __name__ == "__main__":
-    print("Simple Ollama AI Agent (type 'exit' to quit)\n")
+`if __name__ == "__main__":
+    print("Simple Ollama AI Agent (type 'exit' to quit)\n")`
 
     while True:
         q = input("You: ")
@@ -104,8 +104,8 @@ if __name__ == "__main__":
         answer = agent(q)
         print("\nAgent:\n", answer, "\n")
 
-Menjalankan Program
-python agent.py
+## Menjalankan Program
+`python agent.py`
 
 
 Contoh:
@@ -114,9 +114,9 @@ You: Buatkan rencana belajar Python 30 hari
 You: Jelaskan OOP dengan sederhana
 You: exit
 
-Mengganti Model
+## Mengganti Model
 
-Ubah bagian ini di agent.py:
+```Ubah bagian ini di agent.py:
 
 model="llama3"
 
