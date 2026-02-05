@@ -37,8 +37,7 @@ Pastikan sudah terinstall:
 - Ollama
 
 Cek dengan:
-
-```bash
+```bash```
 python --version
 ollama --version
 
